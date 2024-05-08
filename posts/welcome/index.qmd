@@ -1,0 +1,12 @@
+---
+title: "Welcome To My Blog"
+author: "Marie Sallaberry"
+date: "2024-05-05"
+categories: [news]
+---
+
+This blog is a work in progress to help my coworkers.
+
+![](thumbnail.jpg)
+
+

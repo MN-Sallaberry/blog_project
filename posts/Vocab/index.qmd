@@ -1,0 +1,74 @@
+---
+title: "Vocabulary: a few important terms"
+author: "Marie Sallaberry"
+date: "2024-05-08"
+categories: [Vocab]
+image: "octocat_groot.jpg"
+---
+
+![Photo by <a href="https://unsplash.com/@praveentcom?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Praveen Thirumurugan</a> on <a href="https://unsplash.com/photos/a-book-and-a-small-figurine-on-a-desk-KPAQpJYzH0Y?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>](octocat_groot.jpg "Photo of Octocat and Groot")
+
+In this post, we will learn the essential terminology and commonly used commands in Git and GitHub.
+Let's start with an explanation of what Git and GitHub are and how they differ.
+
+## What are Git and GitHub?
+
+Git is a software: an open source version control system for tracking changes on computer files. It operates as a local system, not a web/cloud based system.
+In most cases, you need to use the command line to interact with Git, although some IDEs like Visual Studio Code (VSCode) or RStudio have integrated Git. I've heard that using a command line (like Bash) works better.
+
+GitHub is a code hosting platform for collaboration and version control. It's a website and cloud based service, allowing users to store their code or documents in repositories that can be public (anyone can see and copy the files) or private (restricted access). GitHub also offers additional functionalities like codespace, projects, and automation tools (like GitHub Actions).
+
+In a nutshell, Git tracks changes on your computer, while GitHub hosts those documents in the cloud and facilitates collaborative work on files. 
+
+Here is a nice video if you want to learn more:
+{{< video "https://www.youtube.com/watch?v=wpISo9TNjfU&t=258s" >}}
+
+## Git commands
+
+Git needs to be installed on your computer. You can visit their [website]("https://git-scm.com/") to do so. You can alsoinstall Bash, a command line interface, at the same time. 
+
+There are a few commands that are good to know:  
+
+- git pull: used to update your local repository (on your computer). If your repository (repo) is a clone of a GitHub repo and changes have been made on GitHub, your repository will be updated.  
+- git checkout -b[branch]: creates and checkout a new branch. You would then use 'git push -u origin [branch]' to create the branch on GitHub. The -u stands for upstream, it links the branch on your computer to the new one on GitHub.  
+- git add: stages the changes you've made. It simply means that you file is ready to commit. You can modify different files and stage them so that you only do one commit.  
+- git commit: this is the phase where your changes get tagged with a date, author name etc. You can (and should) add a very short message explaining what changes have been made. The command to commit with a message is: git commit -m "Your message here".  
+- git push: sends/updates the GitHub repo.  
+
+Note: these are simplified commands and are usually followed by additional commands. For example, to push your changes to GitHub, you'll have to specify which branch to push onto. The command might look like this:
+git push origin main
+
+If working from VSCode or RStudio, you shouldn't have to worry too much about these commands. But it's important to understand what they are used for.
+Here is a picture of some Git commands in Bash:
+
+![Git commands in Bash](Bash_commands.png "Screenshot of Bash")
+
+## Git terminology
+
+- Working tree: a set of nested directories and files that contain the project.  
+- Repo (repository): the root directory  
+- Commit: committing the changes so people can see them  
+- Branch: "a named series of linked commits". The default branch, when you create the repo, is called "main" or "master", and the most recent commit is called the HEAD. To make an analogy with roads, the main branch would be one road that everyone takes, but at any point, it is possible to divert to a different road parallel to the main (create a new branch), and later return to the main later (merge). 
+**Nothing happening on the parallel branch(es) will affect the main branch until the merge is done.**
+This is a great way to experiment without risking messing up the main program.  
+- Remote: reference to another Git repo. When initializing a repo on the computer, Git creates a remote called origin, which will be the default remote for push/pull operations. On GitHub, that remote may be called main (for the main branch) or any other name used for branches.
+
+![Exemple of Git branches - Picture from digitalvarys.com](git_op.jpg){fig-alt="Picture of 3 Git branches" width=80%}
+
+## GitHub terminology
+
+Let's now take a look at some of the terminology you may encounter when working with GitHub. Since GitHub serves as a platform to store your Git repositories in the cloud, you will find that they share many common terms; for example, commit, branch, etc.
+Let's add a few more:
+
+- Pull request: if you don't have complete access to a repo as a collaborator, you won't be able to push your commits to the main branch directly. Instead, you have to send a pull request to the owner/maintainer. The maintainer might ask for some modifications before merging.  
+- Fork: if you want to work independently on a repo that you don't own, you can fork that repo to your personal GitHub. The forked repo will appear among your other repositories and notify you of updates made to the main repo, so you can update (using the button "sync fork"). You canalso modify the forked repo and push (or pull request) your changes to the main repo (using the "Contribute" button). Note: when someone forks a repo, they create a temporary branch. 
+- Clone: clone is similar to forking, but it occurs between GitHub and your local machine instead of between two GitHub accounts.   
+- Merging: integrating the changes from a source branch into a target branch (usually the main branch, but it doesn't have to be). The maintainer can select which commits to merge if this is done through a pull request.  
+- Readme.md: a markdown file used to describe the project, and potentially outline the rules for contributing.  
+
+![Example of a forked repo on my GitHub account. Notice the line that says "This branch is up to date with Fastai/fastpages:master. The fork branch can be ahead by x commits if I've made changes, in which case I could hit the "Contribute" button. Or it could be behind main, in which case I would use the button "Sync fork"](fastpages_fork.png "Image of a forked repo")
+
+# Reference and ressources
+
+[GitHub docs](https://docs.github.com/en)  
+[Git documentation](https://git-scm.com/doc)

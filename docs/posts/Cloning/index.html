@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Marie Sallaberry">
+<meta name="dcterms.date" content="2024-05-22">
 
-<title>My cool website - What about branches?</title>
+<title>My cool website - Cloning a repo on my computer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +22,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,77 +102,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">My cool website</span>
     </a>
   </div>
@@ -149,7 +125,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -167,144 +143,128 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">What about branches?</h1>
-            <p class="subtitle lead">A little help with Git/GitHub</p>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Cloning a repo on my computer</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">GitHub</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Marie Sallaberry </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 22, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="GitHub">GitHub <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Vocab">Vocab <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p>There are different ways to clone a GitHub repository to your computer. I will talk about 3 of them:</p>
+<ul>
+<li>using a terminal/shell/Bash</li>
+<li>using RStudio</li>
+<li>using VSCode</li>
+</ul>
+<section id="cloning-using-the-terminal-shellbash" class="level2">
+<h2 class="anchored" data-anchor-id="cloning-using-the-terminal-shellbash">Cloning using the terminal (shell/Bash)</h2>
+<p>In your terminal, go to the directory where you want the repo to be cloned using the command ‘cd’ Ex: cd desktop</p>
+<p>In GitHub, go to the repository and click on the green “Code” button. Copy the HTTPS adress of the repo: <img src="clone_https.png" title="Screenshot of https cloning in GitHub" class="img-fluid" alt="Cloning using HTTPS"></p>
+<p>In the terminal, type the command:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="op">&lt;</span>the https adress<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you want to change the name of the repository on your computer, add the new name at the end of the previous command:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="op">&lt;</span>the https adress<span class="op">&gt;</span> <span class="op">&lt;</span>new name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Et voila!!!</p>
+</section>
+<section id="cloning-a-repo-from-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="cloning-a-repo-from-rstudio">Cloning a repo from RStudio</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This will work only if you’re cloning a repo from the GitHub account that is linked to RStudio</p>
+</div>
+</div>
+<p>Open RStudio. In File, select ‘New Project’. This will open a “Create Project” window with 3 choices. Select “Version Control”:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Rstudio_clone.png" title="Screenshot of project creation in RStudio" class="img-fluid figure-img"></p>
+<figcaption>Cloning from RStudio</figcaption>
+</figure>
+</div>
+<p>You will have the option of cloning a project from a Git repository. You will get this window:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Clone_git_rstudio.png" title="Screenshot of the Clone Git Repository window" class="img-fluid figure-img"></p>
+<figcaption>Clone Git Repository in RStudio</figcaption>
+</figure>
+</div>
+<p>Use the https adress as seen previously as the URL, give a project name and click the “Create Project” button. Magic!</p>
+</section>
+<section id="cloning-a-repo-from-vscode" class="level2">
+<h2 class="anchored" data-anchor-id="cloning-a-repo-from-vscode">Cloning a repo from VSCode</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This will work only if you’re cloning a repo from the GitHub account that is linked to VSCode</p>
+</div>
+</div>
+<p>Very easy! From the start, VSCode offers to clone a Git repository! It also appears if you click on the source control icon to the left:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Clone_VSCode.png" title="Access to clone Git repo in Visual Studio Code" class="img-fluid figure-img"></p>
+<figcaption>Clone a Git repo in VSCode</figcaption>
+</figure>
+</div>
+<p>A small window will appear on top of the screen where you can paste the URL (use the HTTPS adress as seen previously). :::{.callout-note} You can click on “Clone from GitHub”, a list of repository from the GitHub linked to VSCode will appear! ::: A window will then appear so you can choose the destination for the repo. Easy peasy!</p>
+<p>You are now a Clone Master!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="darth_clone.jpg" title="Picture of lego Darth Vader" class="img-fluid figure-img"></p>
+<figcaption>Photo by Daniel K Cheung on Unsplash</figcaption>
+</figure>
+</div>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="GitHub" data-listing-date-sort="1716350400000" data-listing-file-modified-sort="1716406598220" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="341">
-<div class="thumbnail">
-<p><a href="./posts/Cloning/index.html" class="no-external"></a></p><a href="./posts/Cloning/index.html" class="no-external">
-<p class="card-img-top"><img src="posts\Cloning\clone_https.png" alt="Cloning using HTTPS" title="Screenshot of https cloning in GitHub" class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/Cloning/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Cloning/index.html" class="no-external">Cloning a repo on my computer</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/Cloning/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('GitHub'); return false;">
-GitHub
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/Cloning/index.html" class="no-external">There are different ways to clone a GitHub repository to your computer. I will talk about 3 of them: - using a terminal/shell/Bash - using RStudio - using VSCode</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/Cloning/index.html" class="no-external">
-<div class="listing-date">
-May 22, 2024
-</div>
-<div class="listing-author">
-Marie Sallaberry
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Vocab" data-listing-date-sort="1715140800000" data-listing-file-modified-sort="1715199700386" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1021">
-<div class="thumbnail">
-<p><a href="./posts/Vocab/index.html" class="no-external"></a></p><a href="./posts/Vocab/index.html" class="no-external">
-<p><img src="./posts/Vocab/octocat_groot.jpg" class="thumbnail-image"></p>
-</a><p><a href="./posts/Vocab/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Vocab/index.html" class="no-external">Vocabulary: a few important terms</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/Vocab/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Vocab'); return false;">
-Vocab
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/Vocab/index.html" class="no-external">In this post, we will learn the essential terminology and commonly used commands in Git and GitHub. Let’s start with an explanation of what Git and GitHub are and how they…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/Vocab/index.html" class="no-external">
-<div class="listing-date">
-May 8, 2024
-</div>
-<div class="listing-author">
-Marie Sallaberry
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="news" data-listing-date-sort="1714881600000" data-listing-file-modified-sort="1715198156614" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="11">
-<div class="thumbnail">
-<p><a href="./posts/welcome/index.html" class="no-external"></a></p><a href="./posts/welcome/index.html" class="no-external">
-<p class="card-img-top"><img src="posts\welcome\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/welcome/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/welcome/index.html" class="no-external">Welcome To My Blog</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/welcome/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
-news
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/welcome/index.html" class="no-external">This blog is a work in progress to help my coworkers.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/welcome/index.html" class="no-external">
-<div class="listing-date">
-May 5, 2024
-</div>
-<div class="listing-author">
-Marie Sallaberry
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

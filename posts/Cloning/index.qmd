@@ -14,8 +14,11 @@ There are different ways to clone a GitHub repository to your computer. I will t
 
 ## Cloning using the terminal (shell/Bash)
 
-In your terminal, go to the directory where you want the repo to be cloned using the command 'cd'
-Ex: cd desktop
+In your terminal, go to the directory where you want the repo to be cloned using the command 'cd'.
+Ex: 
+```{.bash}
+cd desktop
+```
 
 In GitHub, go to the repository and click on the green "Code" button.
 Copy the HTTPS adress of the repo:
@@ -60,6 +63,7 @@ From the start, VSCode offers to clone a Git repository! It also appears if you 
 ![Clone a Git repo in VSCode](Clone_VSCode.png "Access to clone Git repo in Visual Studio Code")
 
 A small window will appear on top of the screen where you can paste the URL (use the HTTPS adress as seen previously).
+
 :::{.callout-note}
 You can click on "Clone from GitHub", a list of repository from the GitHub linked to VSCode will appear!
 :::

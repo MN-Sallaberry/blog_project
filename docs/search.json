@@ -67,7 +67,7 @@
     "href": "posts/Cloning/index.html#cloning-using-the-terminal-shellbash",
     "title": "Cloning a repo on my computer",
     "section": "Cloning using the terminal (shell/Bash)",
-    "text": "Cloning using the terminal (shell/Bash)\nIn your terminal, go to the directory where you want the repo to be cloned using the command ‘cd’ Ex: cd desktop\nIn GitHub, go to the repository and click on the green “Code” button. Copy the HTTPS adress of the repo: \nIn the terminal, type the command:\ngit clone &lt;the https adress&gt;\nIf you want to change the name of the repository on your computer, add the new name at the end of the previous command:\ngit clone &lt;the https adress&gt; &lt;new name&gt;\nEt voila!!!"
+    "text": "Cloning using the terminal (shell/Bash)\nIn your terminal, go to the directory where you want the repo to be cloned using the command ‘cd’. Ex:\ncd desktop\nIn GitHub, go to the repository and click on the green “Code” button. Copy the HTTPS adress of the repo: \nIn the terminal, type the command:\ngit clone &lt;the https adress&gt;\nIf you want to change the name of the repository on your computer, add the new name at the end of the previous command:\ngit clone &lt;the https adress&gt; &lt;new name&gt;\nEt voila!!!"
   },
   {
     "objectID": "posts/Cloning/index.html#cloning-a-repo-from-rstudio",
@@ -95,6 +95,6 @@
     "href": "posts/Cloning/index.html#cloning-using-vscode",
     "title": "Cloning a repo on my computer",
     "section": "Cloning using VSCode",
-    "text": "Cloning using VSCode\n\n\n\n\n\n\nWarning\n\n\n\nThis will work only if you’re cloning a repo from the GitHub account that is linked to VSCode\n\n\nVery easy! From the start, VSCode offers to clone a Git repository! It also appears if you click on the source control icon to the left:\n\n\n\nClone a Git repo in VSCode\n\n\nA small window will appear on top of the screen where you can paste the URL (use the HTTPS adress as seen previously). :::{.callout-note} You can click on “Clone from GitHub”, a list of repository from the GitHub linked to VSCode will appear! ::: A window will then appear so you can choose the destination for the repo. Easy peasy!\nYou are now a Clone Master!\n\n\n\nPhoto by Daniel K Cheung on Unsplash"
+    "text": "Cloning using VSCode\n\n\n\n\n\n\nWarning\n\n\n\nThis will work only if you’re cloning a repo from the GitHub account that is linked to VSCode\n\n\nVery easy! From the start, VSCode offers to clone a Git repository! It also appears if you click on the source control icon to the left:\n\n\n\nClone a Git repo in VSCode\n\n\nA small window will appear on top of the screen where you can paste the URL (use the HTTPS adress as seen previously).\n\n\n\n\n\n\nNote\n\n\n\nYou can click on “Clone from GitHub”, a list of repository from the GitHub linked to VSCode will appear!\n\n\nA window will then appear so you can choose the destination for the repo. Easy peasy!\nYou are now a Clone Master!\n\n\n\nPhoto by Daniel K Cheung on Unsplash"
   }
 ]
